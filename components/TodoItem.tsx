@@ -1,17 +1,18 @@
+import { TodoItem } from "@/models";
 import React from "react";
 import { Button, StyleSheet, Text, View } from "react-native";
 
 export const ToDoItem: React.FC<{
-	todo: string;
+	todo: TodoItem;
 	deleteTodo: Function;
 }> = ({ todo, deleteTodo }) => {
 	return (
 		<View style={styles.todoContainer}>
 			<View style={styles.todoTextContainer}>
-				<Text style={styles.sectionTitle}>{todo}</Text>
+				<Text style={styles.sectionTitle}>{todo.value}</Text>
 			</View>
 			<Button
-				onPress={() => deleteTodo(todo)}
+				onPress={() => deleteTodo(todo.id)}
 				title="Mark as completed!"
 				color="grey"
 				accessibilityLabel="delete todo item"
