@@ -44,6 +44,7 @@ export default function Index() {
 
 		try {
 			const db = await getDBConnection();
+			// Add a new todo item with a unique id to the list of todos
 			const newTodos = [
 				...todos,
 				{
